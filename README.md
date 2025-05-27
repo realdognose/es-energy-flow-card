@@ -13,10 +13,10 @@ What first was a code-only solution has received a lot attention, whenever I sha
   - [POIs](#pois)
   - [Flows](#flows)
   - [Labels](#labels)
-- [Basic Maths](#basicmaths) - tiny cook book to resolve flows.
+- [Basic Maths](#basic-maths) - tiny cook book to resolve flows.
 - [Walkthrough](#walkthrough) - Defining the card step by step
 
-### General
+## General
 The card allows you to create a 100% customized layout of your home, defining expressions about your energy flow and visualize everything in realtime. 
 Some impressions: 
 
@@ -179,7 +179,7 @@ flows:
 > :warning: You can use a simple output of an already defined variable. However, If you need to use a variable Twice, you need to assign the flow to a `new` copy of that variable. (It's defining the flows unique id)
 
 In the expression, you can re-use any variable defined as [input](#inputs), [expression](#expressions) or defined in a flow before.
-To properly design flow expressions, also consider reading the [basic maths)(#basicmaths) section. Following some simple rules will allow you to properly resolve any flow value.
+To properly design flow expressions, also consider reading the [basic maths)(#basic-maths) section. Following some simple rules will allow you to properly resolve any flow value.
 
 ![image](https://github.com/user-attachments/assets/df2bc49c-0491-4050-9255-6d83efe241e0)
 
