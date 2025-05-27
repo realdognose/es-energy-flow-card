@@ -39,6 +39,18 @@ explaining the respective key in detail.
 ### Indicator
 
 ### Debug
+The debug-parameter is a very important feature, when doing your configuration. The available modes are `pois`, `flows` and `both`. When debugging, the following actions will be performed: 
+- The whole card is slightly blurred out to make things better readable.
+- Any defined labels are not rendered.
+- The requested debug parameters are added to the card.
+
+Bellow you can see 4 examples of either mode: 
+
+`both` can become very crowdy, so during configuration it is crucial to use the additional debug-info-positioning parameters, as explained in the [pois](#pois) and [flows](#flows) section.
+
+| Regular Mode | pois | flows | both |
+|-------------|-------|-------|------|
+| ![image](https://github.com/user-attachments/assets/b9737372-793c-44e7-a3c4-6f17a5ab8daa) | ![image](https://github.com/user-attachments/assets/2ceedb9b-6088-41d5-8356-3b998e3f83c5) | ![image](https://github.com/user-attachments/assets/b362c06f-9038-42b6-982c-ea4c9ef4c138) | ![image](https://github.com/user-attachments/assets/8d11d0af-0692-409e-9ae0-5beb37c316f2) |
 
 ### Inputs
 
