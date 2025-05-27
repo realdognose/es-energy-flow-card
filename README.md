@@ -104,6 +104,9 @@ expressions:
   - $Multi_L2_IN = $Grid_L2
   - $Multi_L3_IN = $Grid_L3
   - $Multi_L1_DIFF = $Multi_L1_OUT - $Multi_L1_IN
+  - $Multi_L2_DIFF = $Multi_L2_OUT - $Multi_L2_IN
+  - $Multi_L3_DIFF = $Multi_L3_OUT - $Multi_L3_IN
+  - $Multi_DIFF = $Multi_L1_DIFF + $Multi_L2_DIFF + $Multi_L3_DIFF
   - $SingleBatAbs = Math.abs($Bat_DC/4.0)
   - $GridTotal = Math.round($Grid_L1 + $Grid_L2 + $Grid_L3)
 ```
