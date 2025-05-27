@@ -170,8 +170,44 @@ flows:
 > :warning: You can use a simple output of an already defined variable. However, If you need to use a variable Twice, you need to assign the flow to a `new` copy of that variable. (It's defining the flows unique id)
 
 In the expression, you can re-use any variable defined as [input](#inputs), [expression](#expressions) or defined in a flow before.
+To properly design flow expressions, also consider reading the [basic maths)(#basicmaths) section. Following some simple rules will allow you to properly resolve any flow value.
 
 ![image](https://github.com/user-attachments/assets/df2bc49c-0491-4050-9255-6d83efe241e0)
 
-
 ### Labels
+Labels are there to add readable information to the flow.
+
+the basic notation of creating a label is 
+```
+  - x,y,label text, css style
+```
+
+example labels:
+```
+labels:
+  - 46,558,$MPPT_1 W
+  - 363,555,$MPPT_2 W
+  - 147,555,$Multi_L1_DC W
+  - 256,555,$Multi_L2_DC W
+  - 470,555,$Multi_L3_DC W
+  - 165,370,$Multi_L1_OUT W
+  - 285,370,$Multi_L2_OUT W
+  - 482,370,$Multi_L3_OUT W
+  - 145,370,$Multi_L1_IN W,transform:translateX(-100%)
+  - 263,370,$Multi_L2_IN W,transform:translateX(-100%)
+  - 458,370,$Multi_L3_IN W,transform:translateX(-100%)
+  - >-
+    5,417,$MPPT_1 W,width:70px; height:13px; font-size:14px; text-align:center;
+    background-color:#8ec12d; color:black; line-height:15px; border:1px outset
+  - >-
+    318,415,$MPPT_2 W,width:70px; height:13px; font-size:14px;
+    text-align:center; background-color:#8ec12d; color:black; line-height:15px;
+    border:1px outset
+  - >-
+    200,610,$BatterySoC % | $Bat_DC W,width:113px; height:13px; font-size:14px;
+    text-align:center; background-color:#8ec12d; color:black; line-height:15px;
+    border:1px outset; font-weight:bold
+```
+
+![image](https://github.com/user-attachments/assets/9cdf741d-f5f7-40a0-b8a8-654276b63d5c)
+
