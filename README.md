@@ -190,9 +190,10 @@ labels:
   - 147,555,$Multi_L1_DC W
   - 256,555,$Multi_L2_DC W
   - 470,555,$Multi_L3_DC W
-  - 165,370,$Multi_L1_OUT W
-  - 285,370,$Multi_L2_OUT W
-  - 482,370,$Multi_L3_OUT W
+  - 44,611,$SingleBatAbs W
+  - 189,611,$SingleBatAbs W,transform:translateX(-100%)
+  - 324,611,$SingleBatAbs W
+  - 469,611,$SingleBatAbs W
   - 145,370,$Multi_L1_IN W,transform:translateX(-100%)
   - 263,370,$Multi_L2_IN W,transform:translateX(-100%)
   - 458,370,$Multi_L3_IN W,transform:translateX(-100%)
@@ -208,6 +209,9 @@ labels:
     text-align:center; background-color:#8ec12d; color:black; line-height:15px;
     border:1px outset; font-weight:bold
 ```
+
+> :info: The `transform:translateX(-100%)` is quite handy, when you want to align a label to the left of an object, automatically scaling based on the final text-width.
+
 
 ![image](https://github.com/user-attachments/assets/9cdf741d-f5f7-40a0-b8a8-654276b63d5c)
 
