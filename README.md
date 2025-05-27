@@ -69,8 +69,7 @@ Bellow you can see 4 examples of either mode:
 
 | Regular Mode | pois | flows | both |
 |-------------|-------|-------|------|
-| ![image](https://github.com/user-attachments/assets/b9737372-793c-44e7-a3c4-6f17a5ab8daa) | ![image](https://github.com/user-attachments/assets/2ceedb9b-6088-41d5-8356-3b998e3f83c5) | ![image](https://github.com/user-attachments/assets/b362c06f-9038-42b6-982c-ea4c9ef4c138) | ![image](![VictronFlowBackground](https://github.com/user-attachments/assets/6b1a5050-d249-4f6b-89c4-4d190eb1f6f9)
-https://github.com/user-attachments/assets/8d11d0af-0692-409e-9ae0-5beb37c316f2) |
+| ![image](https://github.com/user-attachments/assets/b9737372-793c-44e7-a3c4-6f17a5ab8daa) | ![image](https://github.com/user-attachments/assets/2ceedb9b-6088-41d5-8356-3b998e3f83c5) | ![image](https://github.com/user-attachments/assets/b362c06f-9038-42b6-982c-ea4c9ef4c138) | ![image](![VictronFlowBackground](https://github.com/user-attachments/assets/6b1a5050-d249-4f6b-89c4-4d190eb1f6f9) |
 
 ### Inputs
 Inputs basically map the Homeassistant sensor values to a artificial variable name that can be used in the `expressions`, `flows` and `labels section`. You can add as many inputs as you like / need, consider to give them a 
