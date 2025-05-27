@@ -5,6 +5,15 @@ What first was a code-only solution has received a lot attention, whenever I sha
 # Table of Contents
 - [General](#general)
 - [Configuration](#configuration) - Overview of available configuration keys.
+  - [Background](#background)
+  - [Indicator](#indicator)
+  - [Debug](#debug)
+  - [Inputs](#inputs)
+  - [Expressions](#expressions)
+  - [POIs](#pois)
+  - [Flows](#flows)
+  - [Labels](#labels)
+- [Basic Maths](#basicmaths) - tiny cook book to resolve flows.
 - [Walkthrough](#walkthrough) - Defining the card step by step
 
 ### General
