@@ -210,7 +210,7 @@ labels:
     border:1px outset; font-weight:bold
 ```
 
-> :info: The `transform:translateX(-100%)` is quite handy, when you want to align a label to the left of an object, automatically scaling based on the final text-width.
+> ℹ️ The `transform:translateX(-100%)` is quite handy, when you want to align a label to the left of an object, automatically scaling based on the final text-width.
 
 
 ![image](https://github.com/user-attachments/assets/9cdf741d-f5f7-40a0-b8a8-654276b63d5c)
