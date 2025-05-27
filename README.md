@@ -143,8 +143,35 @@ pois:
 
 ![image](https://github.com/user-attachments/assets/f962ed7e-fae5-4534-8888-63db0565ed57)
 
-
-
 ### Flows
+Flows are the heart of the card. A flow is directed from one `poi` to another and specifying an expression about it's value. 
+
+the basic notation of creating a flow is 
+```
+  - poi_from,poi_to,expression,labelPlacement
+```
+where with `labelPlacement` and the options `t`, `b`, `r` or `l` (default), you can control, if the debug information should be rendered on the top, bottom, left or right side, when debugging: 
+
+example flows:
+```
+flows:
+  - 55,56,$MPPT_1,l
+  - 66,67,$MPPT_2,r
+  - 68,69,$MPPT_1_DC = $MPPT_1,l
+  - 80,79,$MPPT_2_DC = $MPPT_2,r
+  - 72,71,$Multi_L1_DC
+  - 76,75,$Multi_L2_DC
+  - 82,81,$Multi_L3_DC,r
+  - 69,70,$BAT1 = $Bat_DC / 4.0,l
+  - 73,74,$BAT2 = $Bat_DC / 4.0
+  - 77,78,$BAT3 = $Bat_DC / 4.0
+  - 81,83,$BAT4 = $Bat_DC / 4.0,r
+```
+> :warning: You can use a simple output of an already defined variable. However, If you need to use a variable Twice, you need to assign the flow to a `new` copy of that variable. (It's defining the flows unique id)
+
+In the expression, you can re-use any variable defined as [input](#inputs), [expression](#expressions) or defined in a flow before.
+
+![image](https://github.com/user-attachments/assets/df2bc49c-0491-4050-9255-6d83efe241e0)
+
 
 ### Labels
