@@ -35,8 +35,27 @@ explaining the respective key in detail.
 | TODO ||optional parameters|
 
 ### Background
+This is, where it all starts. You can draw your desired schema in ANY software you prefer to use. I used - don't laugh - excel, because it offers a convinient way to add objects and rearange them as desired. 
+Finally, using the snipping tool, I store the file as a regular png. 
 
+The card is 100% automatic scaling and translating all coordinates into their scaled representation, however you achieve the best results, if you design a image-width that matches about your regular display width. 
+
+Once you have created the background, just upload it to your Homeassistants www folder and provide the filename in the configuration: 
+
+<img width=250 src=https://github.com/user-attachments/assets/f6338e35-d3ec-4a2f-bd89-0b2cd5f30946 />
+
+
+```
+background: MyFileName.png
+```
 ### Indicator
+The indicator is the representation of a single energy-bubble floating around. You can use any file desired, heres the one, I decided to use: 
+
+![flowCircle](https://github.com/user-attachments/assets/c86314c5-91f9-4102-8f07-98f9064b564b)
+
+```
+indicator: flowCircle.png
+```
 
 ### Debug
 The debug-parameter is a very important feature, when doing your configuration. The available modes are `pois`, `flows` and `both`. When debugging, the following actions will be performed: 
@@ -50,11 +69,46 @@ Bellow you can see 4 examples of either mode:
 
 | Regular Mode | pois | flows | both |
 |-------------|-------|-------|------|
-| ![image](https://github.com/user-attachments/assets/b9737372-793c-44e7-a3c4-6f17a5ab8daa) | ![image](https://github.com/user-attachments/assets/2ceedb9b-6088-41d5-8356-3b998e3f83c5) | ![image](https://github.com/user-attachments/assets/b362c06f-9038-42b6-982c-ea4c9ef4c138) | ![image](https://github.com/user-attachments/assets/8d11d0af-0692-409e-9ae0-5beb37c316f2) |
+| ![image](https://github.com/user-attachments/assets/b9737372-793c-44e7-a3c4-6f17a5ab8daa) | ![image](https://github.com/user-attachments/assets/2ceedb9b-6088-41d5-8356-3b998e3f83c5) | ![image](https://github.com/user-attachments/assets/b362c06f-9038-42b6-982c-ea4c9ef4c138) | ![image](![VictronFlowBackground](https://github.com/user-attachments/assets/6b1a5050-d249-4f6b-89c4-4d190eb1f6f9)
+https://github.com/user-attachments/assets/8d11d0af-0692-409e-9ae0-5beb37c316f2) |
 
 ### Inputs
+Inputs basically map the Homeassistant sensor values to a artificial variable name that can be used in the `expressions`, `flows` and `labels section`. You can add as many inputs as you like / need, consider to give them a 
+short, but meaningfull name to be able to easily reference them, when required: 
+
+format: `${name} = sensor.unique_id`
+```
+inputs:
+  - $Grid_L1 = sensor.grid_meter_em540_l1
+  - $Grid_L2 = sensor.grid_meter_em540_l2
+  - $Grid_L3 = sensor.grid_meter_em540_l3
+  - $Symo_L1 = sensor.fronius_symo_l1
+  - $Symo_L2 = sensor.fronius_symo_l2
+  - $Symo_L3 = sensor.fronius_symo_l3
+  - $Symo_S1 = sensor.solar_dach_vorne
+  - $Symo_S2 = sensor.solar_dach_hinten
+  - $Multi_L1_OUT = sensor.multiplus_l1_ac_out
+  - $Multi_L2_OUT = sensor.multiplus_l2_ac_out
+  - $Multi_L3_OUT = sensor.multiplus_l3_ac_out
+```
 
 ### Expressions
+Every expression you provide is evaluated with the regular javascript engine. hence every legit javascript code is a `valid` expression. 
+> :warning: NOTE: Variable values can become negative. So, when specifying an expression like `$x-$y`, the final result could be `5--6` - which is invalid javascript. Make sure you have a space around the `minus` sign, to prevent this from happening: `$x - $y` would become `5 - -6` which is VALID.
+
+Some example expressions. Within an expression, you can re-use any variable defined as `input` or of any earlier expression: 
+
+```
+expressions:
+  - $Multi_L1_IN = $Grid_L1
+  - $Multi_L2_IN = $Grid_L2
+  - $Multi_L3_IN = $Grid_L3
+  - $Multi_L1_DIFF = $Multi_L1_OUT - $Multi_L1_IN
+  - $SingleBatAbs = Math.abs($Bat_DC/4.0)
+  - $GridTotal = Math.round($Grid_L1 + $Grid_L2 + $Grid_L3)
+```
+
+Expressions can also be specified in a [flow](#flows) directly. The expression section is mainly usefull to do some calculations that you want to reuse later.
 
 ### Pois
 
