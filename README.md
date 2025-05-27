@@ -114,6 +114,36 @@ expressions:
 Expressions can also be specified in a [flow](#flows) directly. The expression section is mainly usefull to do some calculations that you want to reuse later.
 
 ### Pois
+Pois specify where a flow starts and ends. ANY intersection of your schema should be considered a `poi` because that's where energy flows are forked or joined. 
+Pois are best created by opening your image file in paint, and review (bottom left) the coordinates of where your mouse-coursor is pointing. 
+
+Some basic rules to make "good pois": 
+
+|------|------|
+| Align them, where the flow is supposed to start and end. (The purple dot is NOT required, that is where my cursor is pointing at) | ![image](https://github.com/user-attachments/assets/f8b15a68-613b-4747-a1df-cfac6fc2e60e) |
+| When you create pois "in-line" make sure they use the same `x` respective `y` coordinate.| ![image](https://github.com/user-attachments/assets/6e803ce8-b425-4af9-b7e4-11d37e8230d9) |
+| At intersections, pick the poi to be centered. | ![image](https://github.com/user-attachments/assets/4278ce2b-e599-40a5-bce9-84a3a3911790) |
+
+the basic notation of creating a poi is 
+```
+  - id,x,y,labelPlacement
+```
+
+where with `labelPlacement` and the options `l` or `r` (default), you can control, if the name of the poi should be rendered on the left or right side, when debugging: 
+
+example pois: 
+```
+pois:
+  ...
+  - 2,56,140,l
+  - 3,99,140
+  - 4,72,170,l
+  ...
+```
+
+![image](https://github.com/user-attachments/assets/f962ed7e-fae5-4534-8888-63db0565ed57)
+
+
 
 ### Flows
 
