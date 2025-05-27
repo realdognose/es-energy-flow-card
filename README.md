@@ -210,6 +210,8 @@ labels:
     border:1px outset; font-weight:bold
 ```
 
+in the label text, you can specify any variable defined/calculated so far.
+
 > ℹ️ The `transform:translateX(-100%)` is quite handy, when you want to align a label to the left of an object, automatically scaling based on the final text-width.
 
 
