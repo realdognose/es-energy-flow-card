@@ -118,7 +118,7 @@ Pois specify where a flow starts and ends. ANY intersection of your schema shoul
 Pois are best created by opening your image file in paint, and review (bottom left) the coordinates of where your mouse-coursor is pointing. 
 
 Some basic rules to make "good pois": 
-
+| | |
 |------|------|
 | Align them, where the flow is supposed to start and end. (The purple dot is NOT required, that is where my cursor is pointing at) | ![image](https://github.com/user-attachments/assets/f8b15a68-613b-4747-a1df-cfac6fc2e60e) |
 | When you create pois "in-line" make sure they use the same `x` respective `y` coordinate.| ![image](https://github.com/user-attachments/assets/6e803ce8-b425-4af9-b7e4-11d37e8230d9) |
