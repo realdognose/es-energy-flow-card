@@ -20,7 +20,7 @@ What first was a code-only solution has received a lot attention, whenever I sha
 The card allows you to create a 100% customized layout of your home, defining expressions about your energy flow and visualize everything in realtime. 
 Some impressions: 
 
-https://github.com/user-attachments/assets/69c34feb-d574-44a2-90f0-0d1de839423d
+https://github.com/user-attachments/assets/d3c8371a-3f29-405c-8fd8-7cba1e48892e
 
 Designing and configuring this card is not easy. I've added debug tools to make it as easy at possible, yet you have to have a basic understanding of fundamental maths AND yaml in order to set it up properly.
 I will walk through the configuration of my view, outlining important information.
