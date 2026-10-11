@@ -94,7 +94,12 @@ Bellow you can see 4 examples of either mode:
 
 | Regular Mode | pois | flows | both |
 |-------------|-------|-------|------|
-| ![image](https://github.com/user-attachments/assets/b9737372-793c-44e7-a3c4-6f17a5ab8daa) | ![image](https://github.com/user-attachments/assets/2ceedb9b-6088-41d5-8356-3b998e3f83c5) | ![image](https://github.com/user-attachments/assets/b362c06f-9038-42b6-982c-ea4c9ef4c138) | ![image](https://github.com/user-attachments/assets/866cb46f-7cc9-4180-b161-703a57738e01)
+| <img width="527" height="688" alt="regular" src="https://github.com/user-attachments/assets/2eb8b0d2-cd9c-4d26-b7a0-efbf4cf9d3c7" />
+| <img width="525" height="685" alt="pois" src="https://github.com/user-attachments/assets/225efc9a-3035-4e3b-91ae-f6798933ecfd" />
+| <img width="525" height="690" alt="flows" src="https://github.com/user-attachments/assets/dc4b53f6-9f28-499c-a7b3-5df4faaea295" />
+| <img width="526" height="685" alt="both" src="https://github.com/user-attachments/assets/445e8031-9f7d-4242-8fd3-1fcaf05bbaac" />
+|
+ 
 
 
 ### Inputs
