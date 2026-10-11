@@ -18,14 +18,16 @@ What first was a code-only solution has received a lot attention, whenever I sha
 
 ## General
 The card allows you to create a 100% customized layout of your home, defining expressions about your energy flow and visualize everything in realtime. 
-Some impressions: 
+Some impressions (old and new layout of my system): 
 
 https://github.com/user-attachments/assets/d3c8371a-3f29-405c-8fd8-7cba1e48892e
 
-https://github.com/user-attachments/assets/839e84d5-ec2f-4115-a8ca-b5b159e75447
+https://github.com/user-attachments/assets/18a355bd-3743-418f-8292-29851cb2cd55
 
 Designing and configuring this card is not easy. I've added debug tools to make it as easy at possible, yet you have to have a basic understanding of fundamental maths AND yaml in order to set it up properly.
 I will walk through the configuration of my view, outlining important information.
+
+I'm a software developer, so didn't use any fancy graphic design tools, but excel and MS Paint to create the basic layout.
 
 ## Configuration
 
@@ -43,7 +45,12 @@ explaining the respective key in detail.
 | pois                  | *                               | Points-of-interest. Any flow start/end and intersection should be a poi | [Read More](#pois) |
 | flows                 | *                               | Energy flows to render | [Read More](#flows) |
 | labels                | *                               | Labels to show and update | [Read More](#labels) |
-| TODO ||optional parameters|
+| laneWidth | * | width a lane should have in px ||
+| minSize | * | minimum size of a energy-bubble in px ||
+| maxSize | * | maximum size of a energy-bubble in px ||
+| minMax | * | smallest maximum value to scale against (Watts) ||
+| maxMax | * | largest maximum value to scale against (Watts) ||
+
 
 ### Background
 This is, where it all starts. You can draw your desired schema in ANY software you prefer to use. I used - don't laugh - excel, because it offers a convinient way to add objects and rearange them as desired. 
@@ -53,8 +60,9 @@ The card is 100% automatic scaling and translating all coordinates into their sc
 
 Once you have created the background, just upload it to your Homeassistants www folder and provide the filename in the configuration: 
 
-<img width=250 src=https://github.com/user-attachments/assets/f6338e35-d3ec-4a2f-bd89-0b2cd5f30946 />
+I've used excel to create the basic image, using column and row settings of 9x9 pixels served the needs I had. 
 
+<img width="635" height="849" alt="Victron-BG-2026-10-10_2" src="https://github.com/user-attachments/assets/2244d491-5275-4661-856a-83956621a637" />
 
 ```
 background: MyFileName.png
