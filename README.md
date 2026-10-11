@@ -313,4 +313,8 @@ Strictly applying Kirchhoffs Law would work the following way:
 - `Incoming` has a positive indicator, so we add it's value to the Right: `0=+$Incoming`
 - `Outgoing` has a negative indicator, so we subtract it's value from the Right `0=+$Incoming-$Outgoing`
 - Taking the example of we want `Third` to be Outgoing, we subtract this value as well: `0=+$Incoming-$Outgoing-$Third`
-- And finally, we just resolve for `Third`, so: `0=+$Incoming-$Outgoing-$Third <=> $Outgoing=+$Incoming-$Third <=> $Outgoing-$Incoming=-$Third <=> $Third=$Incoming-$Outgoing`
+- And finally, we just resolve for `Third`, so:
+  `0=+$Incoming-$Outgoing-$Third
+  <=> $Outgoing=+$Incoming-$Third
+  <=> $Outgoing-$Incoming=-$Third
+  <=> $Third=$Incoming-$Outgoing`
