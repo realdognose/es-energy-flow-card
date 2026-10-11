@@ -50,6 +50,7 @@ explaining the respective key in detail.
 | maxSize | * | maximum size of a energy-bubble in px ||
 | minMax | * | smallest maximum value to scale against (Watts) ||
 | maxMax | * | largest maximum value to scale against (Watts) ||
+| margin | * | The margin of the card. Can be reduced to increase usable view-area. default 8px ||
 
 
 ### Background
