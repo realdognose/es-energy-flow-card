@@ -108,21 +108,20 @@ inputs:
   - $Grid_L1 = sensor.grid_meter_em540_l1
   - $Grid_L2 = sensor.grid_meter_em540_l2
   - $Grid_L3 = sensor.grid_meter_em540_l3
-  - $Symo_L1 = sensor.fronius_symo_l1
-  - $Symo_L2 = sensor.fronius_symo_l2
-  - $Symo_L3 = sensor.fronius_symo_l3
-  - $Symo_S1 = sensor.solar_dach_vorne
-  - $Symo_S2 = sensor.solar_dach_hinten
   - $Multi_L1_OUT = sensor.multiplus_l1_ac_out
   - $Multi_L2_OUT = sensor.multiplus_l2_ac_out
   - $Multi_L3_OUT = sensor.multiplus_l3_ac_out
+  - $EV_L1r = sensor.l1_power
+  - $EV_L2r = sensor.l2_power
+  - $EV_L3r = sensor.l3_power
+  ...
 ```
 
 ### Expressions
 Every expression you provide is evaluated with the regular javascript engine. hence every legit javascript code is a `valid` expression. 
 > :warning: NOTE: Variable values can become negative. So, when specifying an expression like `$x-$y`, the final result could be `5--6` - which is invalid javascript. Make sure you have a space around the `minus` sign, to prevent this from happening: `$x - $y` would become `5 - -6` which is VALID.
 
-Some example expressions. Within an expression, you can re-use any variable defined as `input` or of any earlier expression: 
+Some example expressions. Within an expression, you can re-use any variable defined as `input` or of any earlier expression. Expressions are evaluated in order of listing.: 
 
 ```
 expressions:
@@ -137,7 +136,7 @@ expressions:
   - $GridTotal = Math.round($Grid_L1 + $Grid_L2 + $Grid_L3)
 ```
 
-Expressions can also be specified in a [flow](#flows) directly. The expression section is mainly usefull to do some calculations that you want to reuse later.
+Expressions can also be specified in a [flow](#flows) directly. The expression section is mainly usefull to do some calculations that you want to reuse later but are not directly tied to a certain flow.
 
 ### Pois
 Pois specify where a flow starts and ends. ANY intersection of your schema should be considered a `poi` because that's where energy flows are forked or joined. 
@@ -155,7 +154,7 @@ the basic notation of creating a poi is
   - id,x,y,labelPlacement
 ```
 
-where with `labelPlacement` and the options `l` or `r` (default), you can control, if the name of the poi should be rendered on the left or right side, when debugging: 
+where with `labelPlacement` and the options `l`, `r` (default), `t` and `b`, you can control, if the name of the poi should be rendered on the left, right, top or bottom side, when debugging: 
 
 example pois: 
 ```
@@ -189,14 +188,16 @@ flows:
   - 76,75,$Multi_L2_DC
   - 82,81,$Multi_L3_DC,r
   - 69,70,$BAT1 = $Bat_DC / 4.0,l
-  - 73,74,$BAT2 = $Bat_DC / 4.0
-  - 77,78,$BAT3 = $Bat_DC / 4.0
+  - 73,74,$BAT2 = $Bat_DC / 4.0,
+  - 77,78,$BAT3 = $Bat_DC / 4.0,
   - 81,83,$BAT4 = $Bat_DC / 4.0,r
 ```
+> ℹ️ Note, that omitting the position is not the same as `,` for flows. A flow without a value for the position parameter will use the default. A flow with a empty value provided will not have a rendered label during debug view. (Usefull in congested areas with many micro-flows)
+
 > :warning: You can use a simple output of an already defined variable. However, If you need to use a variable Twice, you need to assign the flow to a `new` copy of that variable. (It's defining the flows unique id)
 
 In the expression, you can re-use any variable defined as [input](#inputs), [expression](#expressions) or defined in a flow before.
-To properly design flow expressions, also consider reading the [basic maths)(#basic-maths) section. Following some simple rules will allow you to properly resolve any flow value.
+To properly design flow expressions, also consider reading the [basic maths](#basic-maths) section. Following some simple rules will allow you to properly resolve any flow value.
 
 ![image](https://github.com/user-attachments/assets/df2bc49c-0491-4050-9255-6d83efe241e0)
 
@@ -241,6 +242,8 @@ in the label text, you can specify any variable defined/calculated so far.
 > ℹ️ The `transform:translateX(-100%)` is quite handy, when you want to align a label to the left of an object, automatically scaling based on the final text-width.
 
 ![image](https://github.com/user-attachments/assets/9cdf741d-f5f7-40a0-b8a8-654276b63d5c)
+
+Values inside labels are usually rounded to a 0-precision, but if needed this can be overwritten: `- 470,622,$Multi_2_Temp:1 °C,`, where `:1` would cause the value to be rounded to 1-precision.
 
 ## Basic Maths
 
