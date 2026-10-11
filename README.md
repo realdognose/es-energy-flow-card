@@ -212,36 +212,74 @@ the basic notation of creating a label is
 example labels:
 ```
 labels:
-  - 46,558,$MPPT_1 W
-  - 363,555,$MPPT_2 W
-  - 147,555,$Multi_L1_DC W
-  - 256,555,$Multi_L2_DC W
-  - 470,555,$Multi_L3_DC W
-  - 44,611,$SingleBatAbs W
-  - 189,611,$SingleBatAbs W,transform:translateX(-100%)
-  - 324,611,$SingleBatAbs W
-  - 469,611,$SingleBatAbs W
-  - 145,370,$Multi_L1_IN W,transform:translateX(-100%)
-  - 263,370,$Multi_L2_IN W,transform:translateX(-100%)
-  - 458,370,$Multi_L3_IN W,transform:translateX(-100%)
+  - 123,770,$Bat_1_Temp:1 °C,transform:translateX(-100%)
+  - 183,770,$Bat_2_Temp:1 °C,transform:translateX(-100%)
+  - 429,770,$Bat_3_Temp:1 °C,transform:translateX(-100%)
+  - 524,770,$Bat_4_Temp:1 °C,
+  - 362,622,$Multi_1_Temp:1 °C,
+  - 470,622,$Multi_2_Temp:1 °C,
+  - 578,622,$Multi_3_Temp:1 °C,
+  - 236,622,$MPPT_RS_Temp:1 °C,transform:translateX(-100%)
+  - 146,622,$MPPT_2_Temp:1 °C,
+  - 50,622,$MPPT_1_Temp:1 °C,
   - >-
-    5,417,$MPPT_1 W,width:70px; height:13px; font-size:14px; text-align:center;
-    background-color:#8ec12d; color:black; line-height:15px; border:1px outset
+    310,603,$Multi_L1_DC W | $Multi_L1_A A,width:83px; height:12px;
+    font-size:10px; text-align:center; background-color:#8ec12d; color:black;
+    line-height:13px; border:1px outset
   - >-
-    318,415,$MPPT_2 W,width:70px; height:13px; font-size:14px;
+    420,603,$Multi_L2_DC W | $Multi_L2_A A,width:83px; height:12px;
+    font-size:10px; text-align:center; background-color:#8ec12d; color:black;
+    line-height:13px; border:1px outset
+  - >-
+    530,603,$Multi_L3_DC W | $Multi_L3_A A,width:83px; height:12px;
+    font-size:10px; text-align:center; background-color:#8ec12d; color:black;
+    line-height:13px; border:1px outset
+  - >-
+    205,603,$MPPT_RS W | $MPPT_RS_A A,width:78px; height:12px; font-size:10px;
+    text-align:center; background-color:#8ec12d; color:black; line-height:13px;
+    border:1px outset
+  - >-
+    200,678,$MPPT_ALL W,width:48px; height:12px; font-size:10px;
+    text-align:center; background-color:#8ec12d; color:black; line-height:13px;
+    border:1px outset
+  - >-
+    200,703,$MPPTs_A:1 A,width:48px; height:12px; font-size:10px;
+    text-align:center; background-color:#8ec12d; color:black; line-height:13px;
+    border:1px outset
+  - >-
+    340,678,$Bat_DC W,width:58px; height:12px; font-size:10px;
+    text-align:center; background-color:#8ec12d; color:black; line-height:13px;
+    border:1px outset
+  - >-
+    340,703,$Bat_A:1 A,width:58px; height:12px; font-size:10px;
+    text-align:center; background-color:#8ec12d; color:black; line-height:13px;
+    border:1px outset
+  - >-
+    210,763,$BatterySoC:1 % | $Bat_DC W | $TTG,width:190px; height:13px;
+    font-size:14px; text-align:center; background-color:#8ec12d; color:black;
+    line-height:15px; border:1px outset; font-weight:bold
+  - >-
+    195,417,$MPPT_RS_S1 W,width:42px; height:13px; font-size:10px;
     text-align:center; background-color:#8ec12d; color:black; line-height:15px;
     border:1px outset
   - >-
-    200,610,$BatterySoC % | $Bat_DC W,width:113px; height:13px; font-size:14px;
+    251,417,$MPPT_RS_S2 W,width:42px; height:13px; font-size:10px;
     text-align:center; background-color:#8ec12d; color:black; line-height:15px;
-    border:1px outset; font-weight:bold
+    border:1px outset
+  - >-
+    15,425,$MPPT_1 W,width:60px; height:13px; font-size:14px; text-align:center;
+    background-color:#8ec12d; color:black; line-height:15px; border:1px outset
+  - >-
+    107,425,$MPPT_2 W,width:60px; height:13px; font-size:14px;
+    text-align:center; background-color:#8ec12d; color:black; line-height:15px;
+    border:1px outset
 ```
 
 in the label text, you can specify any variable defined/calculated so far.
 
 > ℹ️ The `transform:translateX(-100%)` is quite handy, when you want to align a label to the left of an object, automatically scaling based on the final text-width.
 
-![image](https://github.com/user-attachments/assets/9cdf741d-f5f7-40a0-b8a8-654276b63d5c)
+<img width="350" alt="image" src="https://github.com/user-attachments/assets/5d74f7ad-d612-4045-a9c3-a73475266fec" />
 
 Values inside labels are usually rounded to a 0-precision, but if needed this can be overwritten: `- 470,622,$Multi_2_Temp:1 °C,`, where `:1` would cause the value to be rounded to 1-precision.
 
