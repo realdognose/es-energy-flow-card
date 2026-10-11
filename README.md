@@ -285,5 +285,32 @@ Values inside labels are usually rounded to a 0-precision, but if needed this ca
 
 ## Basic Maths
 
-todo
+You can resolve flows through logic, mostly. Getting the sign of the value right however is critical for the flow widget, as a negative value inverts the flows visualization. 
 
+- If you specify a flow left-to-right, a positive value will flow to the right, a negative to the left. 
+- If you specify a flow right-to-left, then a positive value will flow to the left, a negative to the right. 
+
+The fundamental principle behind is Kirchhoffs Law, and it quite simply says: The sum of all values has to be 0. Or simplified: What comes in, has to go out. 
+
+So, you need to work your way through all flows, starting with the trivial flows that are measured values (Inverter Values, Grid values, ...) 
+Whenever you reach an intersection, you may need to resolve other flows first before you can proceed: 
+
+- for a 3 way intersection, you need to know 2 of the connected flows already. 
+- for a 4 way intersection, you need to know 3 of the connected flows already. 
+
+Example 1: 
+We know `Incoming` and `Outgoing` already. And we specify that `Third` flows away, too. Then it's expression gonna be: `$Third = $Incoming - $Outgoing`
+
+<img width="501" height="228" alt="image" src="https://github.com/user-attachments/assets/fbc695f9-8c1d-4a77-b4a8-5267ed08bed8" />
+
+If we would like to specify it as an incoming flow, it would be: `$Third = $Outgoing - $Incoming`
+
+<img width="500" height="247" alt="image" src="https://github.com/user-attachments/assets/7671e937-2379-4f91-85b4-ff3a658f0658" />
+
+Strictly applying Kirchhoffs Law would work the following way: 
+
+- `0=` is our starting point
+- `Incoming` has a positive indicator, so we add it's value to the Right: `0=+$Incoming`
+- `Outgoing` has a negative indicator, so we subtract it's value from the Right `0=+$Incoming-$Outgoing`
+- Taking the example of we want `Third` to be Outgoing, we subtract this value as well: `0=+$Incoming-$Outgoing-$Third`
+- And finally, we just resolve for `Third`, so: `0=+$Incoming-$Outgoing-$Third <=> $Outgoing=+$Incoming-$Third <=> $Outgoing-$Incoming=-$Third <=> $Third=$Incoming-$Outgoing`
