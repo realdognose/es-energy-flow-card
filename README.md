@@ -62,7 +62,13 @@ Once you have created the background, just upload it to your Homeassistants www 
 
 I've used excel to create the basic image, using column and row settings of 9x9 pixels served the needs I had. 
 
-<img width="635" height="849" alt="Victron-BG-2026-10-10_2" src="https://github.com/user-attachments/assets/2244d491-5275-4661-856a-83956621a637" />
+<img width="235" alt="Victron-BG-2026-10-10_2" src="https://github.com/user-attachments/assets/2244d491-5275-4661-856a-83956621a637" />
+
+I've placed a marker bottom right, so whenever I'm gonna "snip" the image, I can ensure the final png
+(pasted in paint) can be adjusted to the very same width as before, so the flows do match again. 
+
+<img width="235" alt="image" src="https://github.com/user-attachments/assets/d7b81061-a855-42b8-8b21-de72f3aaef82" />
+
 
 ```
 background: MyFileName.png
